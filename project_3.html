@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Custom Logo Module - Mohammed Shafeeque</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+<style>body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #F8F9FA
+    }
+.slide-container {
+    width: 1280px;
+    min-height: 100vh;
+    position: relative;
+    background-color: #FFF;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05)
+    }
+.nav-bar {
+    padding: 15px 80px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #F0F0F0;
+    position: relative;
+    z-index: 50
+    }
+.nav-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1976D2
+    }
+.nav-links {
+    display: flex;
+    gap: 30px
+    }
+.nav-link {
+    font-size: 14px;
+    color: #616161;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 0
+    }
+.nav-link:hover, .nav-link.active {
+    color: #1976D2
+    }
+.nav-link.active {
+    border-bottom: 2px solid #1976D2
+    }
+.content-section {
+    flex: 1;
+    padding: 40px 80px 50px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    position: relative;
+    z-index: 10
+    }
+.breadcrumb {
+    grid-column: 1/-1;
+    font-size: 13px;
+    color: #9E9E9E;
+    margin-bottom: 20px
+    }
+.page-title {
+    grid-column: 1/-1;
+    margin-bottom: 20px
+    }
+.page-title h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #212121;
+    line-height: 1.2
+    }
+.page-title span {
+    color: #7E57C2
+    }
+.info-card {
+    background-color: #F8F9FA;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #E0E0E0;
+    transition: all 0.3s ease
+    }
+.info-card:hover {
+    background-color: #FFF;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translatey(-3px)
+    }
+.card-problem {
+    border-left-color: #FF7043
+    }
+.card-solution {
+    border-left-color: #1976D2
+    }
+.card-tech {
+    border-left-color: #009688
+    }
+.card-contribution {
+    border-left-color: #7E57C2
+    }
+.card-impact {
+    border-left-color: #FFA726;
+    grid-column: 1/-1
+    }
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px
+    }
+.card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 14px
+    }
+.card-problem .card-icon {
+    background-color: #FBE9E7;
+    color: #FF7043
+    }
+.card-solution .card-icon {
+    background-color: #E3F2FD;
+    color: #1976D2
+    }
+.card-tech .card-icon {
+    background-color: #E0F2F1;
+    color: #009688
+    }
+.card-contribution .card-icon {
+    background-color: #EDE7F6;
+    color: #7E57C2
+    }
+.card-impact .card-icon {
+    background-color: #FFF3E0;
+    color: #FFA726
+    }
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #424242
+    }
+.card-content {
+    font-size: 13px;
+    color: #616161;
+    line-height: 1.5
+    }
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px
+    }
+.tech-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #616161;
+    border: 1px solid #E0E0E0
+    }
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none
+    }
+.circle-top {
+    width: 350px;
+    height: 350px;
+    background-color: #E3F2FD;
+    top: -150px;
+    right: -80px;
+    opacity: 0.4
+    }
+.circle-bottom {
+    width: 250px;
+    height: 250px;
+    background-color: #E0F2F1;
+    bottom: -100px;
+    left: -40px;
+    opacity: 0.4
+    }
+.footer-nav {
+    margin-top: auto; /* pushes footer to bottom of flex container */
+	padding: 15px 80px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #F0F0F0
+    }
+.page-indicator {
+    font-size: 12px;
+    color: #9E9E9E;
+    font-weight: 500
+    }
+.nav-buttons {
+    display: flex;
+    gap: 15px
+    }
+.nav-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none
+    }
+.nav-btn-next {
+    background-color: #1976D2;
+    color: #FFF
+    }
+.nav-btn-next:hover {
+    background-color: #1565C0
+    }
+.nav-btn-prev {
+    background-color: #F5F5F5;
+    color: #616161
+    }
+.nav-btn-prev:hover {
+    background-color: #E0E0E0
+    }</style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-circle circle-top"></div>
+<div class="bg-circle circle-bottom"></div>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+<div class="nav-logo">MOHAMMED SHAFEEQUE</div>
+<div class="nav-links">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="experience.html" class="nav-link">Experience</a>
+<a href="skills.html" class="nav-link">Skills</a>
+<a href="projects.html" class="nav-link active">Projects</a>
+<a href="contact.html" class="nav-link">Contact</a>
+</div>
+</div>
+
+<!-- Content Section -->
+<div class="content-section">
+<div class="breadcrumb">
+<a href="projects.html">Projects</a> &gt; <span style="color: #7E57C2">Custom Logo Products Module</span>
+</div>
+<div class="page-title">
+<h1>Project 03: <span>Custom Logo Products Module</span></h1>
+</div>
+<div class="info-card card-problem">
+<div class="card-header">
+<div class="card-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<h3 class="card-title">Problem</h3>
+</div>
+<p class="card-content">
+Business need for customers to personalize products with custom logos, requiring complex UI customization and backend order workflow support
+</p>
+</div>
+<div class="info-card card-solution">
+<div class="card-header">
+<div class="card-icon">
+<i class="fas fa-lightbulb"></i>
+</div>
+<h3 class="card-title">Solution</h3>
+</div>
+<p class="card-content">
+Built Angular UI for product personalization (logo placement, size, color). Customized Intershop pipelines and cartridges. Developed Java backend services for complex order workflows. Implemented REST APIs. Containerized services using Docker.
+</p>
+</div>
+<div class="info-card card-tech">
+<div class="card-header">
+<div class="card-icon">
+<i class="fas fa-cogs"></i>
+</div>
+<h3 class="card-title">Tech Stack</h3>
+</div>
+<div class="tech-badges">
+<span class="tech-badge">Angular</span>
+<span class="tech-badge">Intershop Cartridges</span>
+<span class="tech-badge">Spring Boot</span>
+<span class="tech-badge">REST APIs</span>
+<span class="tech-badge">Docker</span>
+</div>
+</div>
+<div class="info-card card-contribution">
+<div class="card-header">
+<div class="card-icon">
+<i class="fas fa-user-cog"></i>
+</div>
+<h3 class="card-title">Contribution</h3>
+</div>
+<p class="card-content">
+Built Angular UI for product personalization features. Customized Intershop pipelines and cartridges for extended functionality. Developed Java backend services. Implemented REST APIs for logo asset CRUD operations.
+</p>
+</div>
+<div class="info-card card-impact">
+<div class="card-header">
+<div class="card-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<h3 class="card-title">Impact</h3>
+</div>
+<p class="card-content">
+Enabled complex product customization workflows, allowing customers to personalize products with custom logos through intuitive Angular UI and robust backend services
+</p>
+</div>
+</div>
+
+<!-- Footer Navigation -->
+<div class="footer-nav">
+<div class="page-indicator">Project 3</div>
+<div class="nav-buttons">
+<button class="nav-btn nav-prev" onclick="window.location.href='project_2.html'">← Project 2</button>
+<button class="nav-btn nav-next" onclick="window.location.href='contact.html'">Contact →</button>
+</div>
+</div>
+</div>
+</body>
+</html>

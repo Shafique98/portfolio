@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills - Mohammed Shafeeque</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+<style>body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #F8F9FA
+    }
+.slide-container {
+    width: 1280px;
+    min-height: 100vh;
+    position: relative;
+    background-color: #FFF;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05)
+    }
+/* Navigation Bar */
+.nav-bar {
+    padding: 15px 80px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #F0F0F0;
+    position: relative;
+    z-index: 50
+    }
+.nav-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1976D2
+    }
+.nav-links {
+    display: flex;
+    gap: 30px
+    }
+.nav-link {
+    font-size: 14px;
+    color: #616161;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 0
+    }
+.nav-link:hover, .nav-link.active {
+    color: #1976D2
+    }
+.nav-link.active {
+    border-bottom: 2px solid #1976D2
+    }
+/* Content Section */
+.content-section {
+    flex: 1;
+    padding: 50px 80px 50px 80px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+    z-index: 10
+    }
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+    }
+.skill-card {
+    background-color: #F8F9FA;
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%
+    }
+.skill-card:hover {
+    transform: translatey(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: #FFF
+    }
+.card-backend {
+    border-left-color: #1976D2
+    }
+.card-frontend {
+    border-left-color: #009688
+    }
+.card-database {
+    border-left-color: #5C6BC0
+    }
+.card-devops {
+    border-left-color: #AB47BC
+    }
+.card-testing {
+    border-left-color: #FF7043
+    }
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px
+    }
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px
+    }
+.card-backend .icon-box {
+    background-color: #E3F2FD;
+    color: #1976D2
+    }
+.card-frontend .icon-box {
+    background-color: #E0F2F1;
+    color: #009688
+    }
+.card-database .icon-box {
+    background-color: #E8EAF6;
+    color: #5C6BC0
+    }
+.card-devops .icon-box {
+    background-color: #F3E5F5;
+    color: #AB47BC
+    }
+.card-testing .icon-box {
+    background-color: #FBE9E7;
+    color: #FF7043
+    }
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #424242
+    }
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+    }
+.skill-item {
+    font-size: 14px;
+    color: #616161;
+    background-color: #FAFAFA;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #E0E0E0;
+    transition: all 0.2s ease
+    }
+.skill-item:hover {
+    background-color: #F0F0F0;
+    border-color: #BDBDBD
+    }
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none
+    }
+.circle-top {
+    width: 400px;
+    height: 400px;
+    background-color: #E3F2FD;
+    top: -200px;
+    right: -100px;
+    opacity: 0.4
+    }
+.circle-bottom {
+    width: 300px;
+    height: 300px;
+    background-color: #E0F2F1;
+    bottom: -150px;
+    left: -50px;
+    opacity: 0.4
+    }
+.divider {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    bottom: 50px;
+    width: 1px;
+    background-color: #E0E0E0;
+    transform: translatex(-50%);
+    z-index: 0;
+    opacity: 0.5
+    }
+/* Footer Navigation */
+.footer-nav {
+    padding: 15px 80px;
+	margin-top: auto; /* pushes footer to bottom of flex container */
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #F0F0F0
+    }
+.page-indicator {
+    font-size: 12px;
+    color: #9E9E9E;
+    font-weight: 500
+    }
+.nav-buttons {
+    display: flex;
+    gap: 15px
+    }
+.nav-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none
+    }
+.nav-btn-next {
+    background-color: #1976D2;
+    color: #FFF
+    }
+.nav-btn-next:hover {
+    background-color: #1565C0
+    }
+.nav-btn-prev {
+    background-color: #F5F5F5;
+    color: #616161
+    }
+.nav-btn-prev:hover {
+    background-color: #E0E0E0
+    }</style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-circle circle-top"></div>
+<div class="bg-circle circle-bottom"></div>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+<div class="nav-logo">MOHAMMED SHAFEEQUE</div>
+<div class="nav-links">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="experience.html" class="nav-link">Experience</a>
+<a href="skills.html" class="nav-link  active">Skills</a>
+<a href="projects.html" class="nav-link">Projects</a>
+<a href="contact.html" class="nav-link">Contact</a>
+</div>
+</div>
+
+<!-- Content Section -->
+<div class="content-section">
+<div class="divider"></div>
+<div class="column">
+<div class="skill-card card-backend">
+<div class="card-header">
+<div class="icon-box">
+<i class="fas fa-server"></i>
+</div>
+<h3 class="card-title">Backend</h3>
+</div>
+<ul class="skill-list">
+<li class="skill-item">Java</li>
+<li class="skill-item">Spring Boot</li>
+<li class="skill-item">Microservices</li>
+<li class="skill-item">Hibernate</li>
+<li class="skill-item">Intershop 6.4</li>
+<li class="skill-item">ISH 7.10</li>
+<li class="skill-item">ICM 11</li>
+<li class="skill-item">ICM 12</li>
+<li class="skill-item">REST APIs</li>
+<li class="skill-item">JWT</li>
+<li class="skill-item">OAuth2</li>
+<li class="skill-item">Swagger</li>
+</ul>
+</div>
+<div class="skill-card card-devops">
+<div class="card-header">
+<div class="icon-box">
+<i class="fas fa-cloud"></i>
+</div>
+<h3 class="card-title">DevOps & Cloud</h3>
+</div>
+<ul class="skill-list">
+<li class="skill-item">Docker</li>
+<li class="skill-item">Kubernetes</li>
+<li class="skill-item">Jenkins</li>
+<li class="skill-item">Git</li>
+<li class="skill-item">CI/CD</li>
+<li class="skill-item">AWS (Basics)</li>
+</ul>
+</div>
+</div>
+<div class="column">
+<div class="skill-card card-frontend">
+<div class="card-header">
+<div class="icon-box">
+<i class="fas fa-desktop"></i>
+</div>
+<h3 class="card-title">Frontend</h3>
+</div>
+<ul class="skill-list">
+<li class="skill-item">Angular</li>
+<li class="skill-item">ISML</li>
+<li class="skill-item">HTML</li>
+<li class="skill-item">CSS</li>
+<li class="skill-item">JavaScript</li>
+<li class="skill-item">Bootstrap</li>
+</ul>
+</div>
+<div class="skill-card card-database">
+<div class="card-header">
+<div class="icon-box">
+<i class="fas fa-database"></i>
+</div>
+<h3 class="card-title">Database</h3>
+</div>
+<ul class="skill-list">
+<li class="skill-item">Oracle</li>
+<li class="skill-item">MySQL</li>
+<li class="skill-item">SQL</li>
+</ul>
+</div>
+<div class="skill-card card-testing">
+<div class="card-header">
+<div class="icon-box">
+<i class="fas fa-vial"></i>
+</div>
+<h3 class="card-title">Testing & Tools</h3>
+</div>
+<ul class="skill-list">
+<li class="skill-item">JUnit</li>
+<li class="skill-item">Postman</li>
+<li class="skill-item">Chrome DevTools</li>
+<li class="skill-item">Agile/Scrum</li>
+<li class="skill-item">Jira</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Footer Navigation -->
+<div class="footer-nav">
+<div class="page-indicator">Skills</div>
+<div class="nav-buttons">
+<button class="nav-btn nav-prev" onclick="window.location.href='experience.html'">← Experience</button>
+<button class="nav-btn nav-next" onclick="window.location.href='projects.html'">Projects →</button>
+</div>
+</div>
+</div>
+</body>
+</html>
