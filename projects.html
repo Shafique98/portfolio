@@ -4,334 +4,110 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Projects - Mohammed Shafeeque</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
-<style>body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #F8F9FA
-    }
-.slide-container {
-    width: 1280px;
-    height: 720px;
-    position: relative;
-    background-color: #FFF;
-    font-family: "Roboto", sans-serif;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05)
-    }
-/* Navigation Bar */
-.nav-bar {
-    padding: 15px 80px;
-    background-color: #FFF;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid #F0F0F0;
-    position: relative;
-    z-index: 50
-    }
-.nav-logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: #1976D2
-    }
-.nav-links {
-    display: flex;
-    gap: 30px
-    }
-.nav-link {
-    font-size: 14px;
-    color: #616161;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 5px 0
-    }
-.nav-link:hover, .nav-link.active {
-    color: #1976D2
-    }
-.nav-link.active {
-    border-bottom: 2px solid #1976D2
-    }
-/* Content Section */
-.content-section {
-    flex: 1;
-    padding: 50px 80px 50px 80px;
-    display: flex;
-    gap: 30px;
-    position: relative;
-    z-index: 10
-    }
-.page-header {
-    margin-bottom: 30px;
-    width: 100%
-    }
-.title-en {
-    font-family: "Playfair Display", serif;
-    font-size: 20px;
-    color: #009688;
-    letter-spacing: 2px;
-    margin-bottom: 10px
-    }
-.title-cn {
-    font-size: 48px;
-    font-weight: 900;
-    color: #212121;
-    line-height: 1.1
-    }
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    flex: 1
-    }
-.project-card {
-    background-color: #F8F9FA;
-    border-radius: 12px;
-    padding: 25px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid transparent;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer
-    }
-.project-card:hover {
-    transform: translatey(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    background-color: #FFF
-    }
-.card-1 {
-    border-left-color: #1976D2
-    }
-.card-2 {
-    border-left-color: #009688
-    }
-.card-3 {
-    border-left-color: #7E57C2
-    }
-.card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px
-    }
-.icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    font-size: 20px
-    }
-.card-1 .icon-box {
-    background-color: #E3F2FD;
-    color: #1976D2
-    }
-.card-2 .icon-box {
-    background-color: #E0F2F1;
-    color: #009688
-    }
-.card-3 .icon-box {
-    background-color: #EDE7F6;
-    color: #7E57C2
-    }
-.card-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #424242;
-    line-height: 1.2
-    }
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 15px
-    }
-.tech-badge {
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-weight: 500;
-    background-color: #F5F5F5;
-    color: #616161
-    }
-.card-1 .tech-badge {
-    background-color: #E3F2FD;
-    color: #1565C0
-    }
-.card-2 .tech-badge {
-    background-color: #E0F2F1;
-    color: #00796B
-    }
-.card-3 .tech-badge {
-    background-color: #EDE7F6;
-    color: #6A1B9A
-    }
-.project-desc {
-    font-size: 14px;
-    color: #616161;
-    line-height: 1.5;
-    flex: 1
-    }
-.bg-circle {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none
-    }
-.circle-top {
-    width: 400px;
-    height: 400px;
-    background-color: #E3F2FD;
-    top: -200px;
-    right: -100px;
-    opacity: 0.4
-    }
-.circle-bottom {
-    width: 300px;
-    height: 300px;
-    background-color: #E0F2F1;
-    bottom: -150px;
-    left: -50px;
-    opacity: 0.4
-    }
-/* Footer Navigation */
-.footer-nav {
-	margin-top: auto; /* pushes footer to bottom of flex container */
-    padding: 15px 80px;
-    background-color: #FFF;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 2px solid #F0F0F0
-    }
-.page-indicator {
-    font-size: 12px;
-    color: #9E9E9E;
-    font-weight: 500
-    }
-.nav-buttons {
-    display: flex;
-    gap: 15px
-    }
-.nav-btn {
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none
-    }
-.nav-btn-next {
-    background-color: #1976D2;
-    color: #FFF
-    }
-.nav-btn-next:hover {
-    background-color: #1565C0
-    }
-.nav-btn-prev {
-    background-color: #F5F5F5;
-    color: #616161
-    }
-.nav-btn-prev:hover {
-    background-color: #E0E0E0
-    }</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<script src="portfolio.js"></script>
 </head>
 <body>
+<div class="scroll-progress"></div>
 <div class="slide-container">
-<div class="bg-circle circle-top"></div>
-<div class="bg-circle circle-bottom"></div>
+  <div class="bg-circle circle-top"></div>
+  <div class="bg-circle circle-bottom"></div>
 
-<!-- Navigation Bar -->
-<div class="nav-bar">
-<div class="nav-logo">MOHAMMED SHAFEEQUE</div>
-<div class="nav-links">
-<a href="index.html" class="nav-link">Home</a>
-<a href="about.html" class="nav-link">About</a>
-<a href="experience.html" class="nav-link">Experience</a>
-<a href="skills.html" class="nav-link">Skills</a>
-<a href="projects.html" class="nav-link active">Projects</a>
-<a href="contact.html" class="nav-link">Contact</a>
-</div>
-</div>
+  <div class="nav-bar">
+    <div class="nav-logo">MOHAMMED SHAFEEQUE</div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <button class="theme-toggle" title="Toggle dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
 
-<!-- Content Section -->
-<div class="content-section">
-<div class="page-header">
-<p class="title-en">PROJECTS</p>
-<h1 class="title-cn">Key Projects</h1>
-</div>
-<div class="projects-grid">
-<a href="project_1.html" class="project-card card-1">
-<div class="card-header">
-<div class="icon-box">
-<i class="fas fa-warehouse"></i>
-</div>
-<h3 class="card-title">Inventory & Stock Management</h3>
-</div>
-<p class="project-desc">
-                    Angular PWA interfaces for item listing and stock control. Spring Boot microservices integrated with SAP for real-time stock updates.
-                </p>
-<div class="tech-stack">
-<span class="tech-badge">Intershop</span>
-<span class="tech-badge">Angular PWA</span>
-<span class="tech-badge">Spring Boot</span>
-<span class="tech-badge">SAP Integration</span>
-</div>
-</a>
-<a href="project_2.html" class="project-card card-2">
-<div class="card-header">
-<div class="icon-box">
-<i class="fas fa-shopping-cart"></i>
-</div>
-<h3 class="card-title">Eprime - E-Commerce Platform</h3>
-</div>
-<p class="project-desc">
-                    High-traffic B2B e-commerce platform. Optimized SQL queries achieving 30% performance improvement with 99.9% uptime.
-                </p>
-<div class="tech-stack">
-<span class="tech-badge">Intershop ICM 11/12</span>
-<span class="tech-badge">Oracle</span>
-<span class="tech-badge">MySQL</span>
-<span class="tech-badge">SQL Optimization</span>
-</div>
-</a>
-<a href="project_3.html" class="project-card card-3">
-<div class="card-header">
-<div class="icon-box">
-<i class="fas fa-paint-brush"></i>
-</div>
-<h3 class="card-title">Custom Logo Products Module</h3>
-</div>
-<p class="project-desc">
-                    Angular UI for product personalization. Customized Intershop pipelines and Java backend for complex order workflows.
-                </p>
-<div class="tech-stack">
-<span class="tech-badge">Angular</span>
-<span class="tech-badge">Intershop Cartridges</span>
-<span class="tech-badge">Spring Boot</span>
-<span class="tech-badge">Docker</span>
-</div>
-</a>
-</div>
-</div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="projects.html" class="nav-link active">Projects</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
 
-<!-- Footer Navigation -->
-<div class="footer-nav">
-<div class="page-indicator">Projects</div>
-<div class="nav-buttons">
-<button class="nav-btn nav-prev" onclick="window.location.href='skills.html'">← Skills</button>
-<button class="nav-btn nav-next" onclick="window.location.href='contact.html'">Contact →</button>
-</div>
-</div>
+  <div class="projects-content">
+    <div class="page-header animate-slide-r">
+      <p class="title-en">Projects</p>
+      <h1 class="title-cn">Key Projects</h1>
+    </div>
+    <div class="projects-grid">
+      <a href="project_1.html" class="project-card card-1 animate-fade-up delay-1">
+        <div class="card-header">
+          <div class="icon-box-sq"><i class="fas fa-warehouse"></i></div>
+          <h3 class="card-title">Inventory &amp; Stock Management</h3>
+        </div>
+        <p class="project-desc">
+          Angular PWA interfaces for item listing and stock control. Spring Boot microservices integrated with SAP for real-time stock updates.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-badge">Intershop</span>
+          <span class="tech-badge">Angular PWA</span>
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">SAP Integration</span>
+        </div>
+        <div class="card-arrow">View Details <i class="fas fa-arrow-right"></i></div>
+      </a>
+
+      <a href="project_2.html" class="project-card card-2 animate-fade-up delay-2">
+        <div class="card-header">
+          <div class="icon-box-sq"><i class="fas fa-shopping-cart"></i></div>
+          <h3 class="card-title">Eprime - E-Commerce Platform</h3>
+        </div>
+        <p class="project-desc">
+          High-traffic B2B e-commerce platform. Optimized SQL queries achieving 30% performance improvement with 99.9% uptime.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-badge">Intershop ICM 11/12</span>
+          <span class="tech-badge">Oracle</span>
+          <span class="tech-badge">MySQL</span>
+          <span class="tech-badge">SQL Optimization</span>
+        </div>
+        <div class="card-arrow">View Details <i class="fas fa-arrow-right"></i></div>
+      </a>
+
+      <a href="project_3.html" class="project-card card-3 animate-fade-up delay-3">
+        <div class="card-header">
+          <div class="icon-box-sq"><i class="fas fa-paint-brush"></i></div>
+          <h3 class="card-title">Custom Logo Products Module</h3>
+        </div>
+        <p class="project-desc">
+          Angular UI for product personalization. Customized Intershop pipelines and Java backend for complex order workflows.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">Intershop Cartridges</span>
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Docker</span>
+        </div>
+        <div class="card-arrow">View Details <i class="fas fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <div class="page-indicator">Projects</div>
+    <div class="nav-buttons">
+      <button class="nav-btn nav-prev" onclick="window.location.href='skills.html'">← Skills</button>
+      <button class="nav-btn nav-next" onclick="window.location.href='contact.html'">Contact →</button>
+    </div>
+  </div>
 </div>
 </body>
 </html>
